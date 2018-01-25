@@ -1,0 +1,276 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig}
+\usepackage{graphicx}
+%\usepackage[dvips]{graphics}
+\usepackage[spanish]{babel}
+\usepackage[paperwidth=17cm, paperheight=22.5cm, bottom=2.5cm, right=2.5cm]{geometry}
+\usepackage{array}
+\usepackage{multirow}
+	
+\begin{document}	
+
+	\chapter{Introducción}  
+	Descripción general del tema y de cómo se tratará todo. Hacer al final
+	
+	\chapter{Análisis descriptivo} 
+		\begin{itemize}
+			\item Poner de qué se trata, los datos de medicina, las imágenes de medicina, y contexto
+			
+			Los datos usados en la tesis son datos reales, no se incluyen datos personales de los pacientes, más que su edad, para conservar la privacidad de estos. 
+			
+			%El problema central es el siguiente: 
+			
+			%En este proyecto había cuatro radiólogos leyendo imágenes de resonancia magnética de caderas, usando la secuencia estándar (SOC = standard of care) y una nueva llamada IDEAL. Los radiólogos evalúan el daño en el cartílago en la cabeza del fémur usando la "carátula del reloj" para descubrir su localización. A los pacientes con "labral tears" (desgarres) son operados con artroscopía, y el cirujano evalúa el daño "real". La pregunta era si IDEAL era mejor que SOC para visualizar el daño, y evaluar que tan repetibles son las lecturas entre radiólogos y las del mismo radiólogo con las dos secuencias.	
+			
+			Antes de entrar al análisis, se dará una breve explicación de lo que son las roturas del labrum acetabular, para así comprender mejor los resultados.
+			
+	        \section{Contexto médico}
+	        La articulación de la cadera está formada por la cabeza femoral (superficie convexa o bola) y por el acetábulo (cavidad articular). El labrum acetabular es un borde de tejido blando, o fibrocartílago, que rodea el acetábulo. El labrum ayuda a dar estabilidad a la cadera y a proteger la unión entre la cabeza del fémur y el acetábulo. (Fuente: US San Diego Health) 
+	        
+	        % Imagen de la anatomía de la cadera. Poner fuente
+	      
+	        
+	        El labrum puede sufrir una ruptura debido a lesiones o degeneración.  Este tipo de lesiones son comunes en atletas que practican fútbol, fútbol americano, ballet, gimnasia, hockey y golf, entre otros. (Fuente: MayoClinic)
+	        
+	        %Imagen de tear. Poner fuente
+	      
+	      
+	        Para diagnosticar una lesión se puede hacer uso de radiografías, pero para obtener mayor información se usa la Resonancia Magnética (RM). En caso de que el paciente necesite intervención quirúrgica se recurre a la artroscopía de cadera, que es un procedimiento cuyo objetivo el reinsertar el labrum roto y reparar cualquier anomalía ósea que pueda tener la cadera (Fuente: Clínica Meds). --- La lectura de la RM se hace en términos de horas de un reloj de manecillas, por ejemplo, 12 a 3. ---
+	        
+			% Imágenes de RM y labrum (reparado). Poner fuente
+			
+		\end{itemize}
+		
+		\begin{table}
+			\begin{tabular}{|l|l|l|l|l|l|l|}
+				\hline
+				\multirow{2}{*}{Dataset} &
+				\multicolumn{2}{c}{A} &
+				\multicolumn{2}{c}{B} &
+				\multicolumn{2}{c|}{C} \\
+				& O.B.R & A.R & O.B.R & A.R & O.B.R & A.R \\
+				\hline
+				D1 & 2.1\% & 2.1\% & 2.1\% & 2.1\% & 2.1\% & 2.1\% \\
+				\hline
+				D2 & 11.6\% & 11.6\% & 11.6\% & 11.6\% & 11.6\% & 11.6\% \\
+				\hline
+				D3 & 5.5\% & 5.5\% & 5.5\% & 5.5\% & 5.5\% & 5.5\% \\
+				\hline
+			\end{tabular}
+		\end{table}
+		
+    	
+		\begin{table}[h]
+		\centering
+		\scalebox{.8}{	
+			\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|}
+				\hline 
+				\multirow{2}{*}{ID} &
+				\multirow{2}{*}{Cirujano} &
+					\multicolumn{2}{c|}{Radiólogo 1}   &  
+					\multicolumn{2}{c|}{Radiólogo 2} &
+					\multicolumn{2}{c|}{Radiólogo 3} &
+					\multicolumn{2}{c|}{Radiólogo 4} 
+					\\ \cline{3-10}
+				&  &SOC & IDEAL & SOC & IDEAL & SOC & IDEAL & SOC & IDEAL \\
+				\hline 
+				1 & 12 a 3 & 12 a 3 & 12 a 3 & 1 a 3 & 1 a 3 & 1 a 2 & 1 a 2 & 12 a 230 & 12 a 230 \\
+				\hline		
+			\end{tabular}
+		}
+		\end{table}
+		
+		
+		\begin{table}
+		\centering
+		\scalebox{.9}{
+			\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 
+				\hline
+				\multirow{3}{*}{ID} &
+				\multicolumn{2}{c|}{\multirow{2}{*}{Cirujano}} & 
+				\multicolumn{4}{c|}{Radiólogo 1} &
+				\multicolumn{4}{c|}{Radiólogo 2} &
+				\multicolumn{4}{c|}{Radiólogo 3} &
+				\multicolumn{4}{c|}{Radiólogo 4} 
+				\\ \cline{4-19} 
+				  & %espacio para id
+				\multicolumn{2}{c|}{} & %columnas para cirujano
+				\multicolumn{2}{c|}{SOC} & \multicolumn{2}{c|}{IDEAL} & %columnas para Rad 1
+				\multicolumn{2}{c|}{SOC} & \multicolumn{2}{c|}{IDEAL} & %columnas para Rad 2
+				\multicolumn{2}{c|}{SOC} & \multicolumn{2}{c|}{IDEAL} & %columnas para Rad 3
+				\multicolumn{2}{c|}{SOC} & \multicolumn{2}{c|}{IDEAL}  %columnas para Rad 4
+				\\ \cline{2-19} 
+				  & %espacio para id
+				X & Y & %cirujano
+				X & Y & %rad1 soc
+				X & Y & %rad1 ideal
+				X & Y & %rad2 soc
+				X & Y & %rad2 ideal
+				X & Y & %rad3 soc
+				X & Y & %rad3 ideal
+				X & Y & %rad4 soc
+				X & Y  %rad4 ideal
+				\\ \hline 
+		        1 & 
+		        12 & 3 & %cirujano
+		        12 & 3 & 12 & 3 & %rad 1
+		        1 & 3 & 1 & 3 & %rad 2
+		        1 & 2 & 1 & 2 & %rad3
+		        12 & 230 & 12 & 230	%rad4
+		        \\ \hline				
+			\end{tabular}
+			}
+		\end{table}
+		
+	
+		\begin{table}
+			\centering
+			\scalebox{.75}{
+				\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 
+					\hline
+					\multirow{2}{*}{ID} &
+					\multicolumn{2}{c|}{\multirow{3}{*}{Cirujano}} & 
+					\multicolumn{4}{c|}{Radiólogo 1} &
+					\multicolumn{4}{c|}{Radiólogo 2} &
+					\multicolumn{4}{c|}{Radiólogo 3} &
+					\multicolumn{4}{c|}{Radiólogo 4} 
+					\\ \cline{4-19} 
+					& %espacio para id
+					\multicolumn{2}{c|}{} & %columnas para cirujano
+					\multicolumn{2}{c|}{SOC} & \multicolumn{2}{c|}{IDEAL} & %columnas para Rad 1
+					\multicolumn{2}{c|}{SOC} & \multicolumn{2}{c|}{IDEAL} & %columnas para Rad 2
+					\multicolumn{2}{c|}{SOC} & \multicolumn{2}{c|}{IDEAL} & %columnas para Rad 3
+					\multicolumn{2}{c|}{SOC} & \multicolumn{2}{c|}{IDEAL}  %columnas para Rad 4
+					\\ \cline{1-19} 
+					&  %espacio para id
+					12 & 3 & %cirujano
+					12 & 3 & 12 & 3 & %rad 1
+					1 & 3 & 1 & 3 & %rad 2
+					1 & 2 & 1 & 2 & %rad3
+					12 & 230 & 12 & 230	%rad4
+					\\ \cline{2-19} 
+					1 & 
+					X & Y & %cirujano
+					X & Y & %rad1 soc
+					X & Y & %rad1 ideal
+					X & Y & %rad2 soc
+					X & Y & %rad2 ideal
+					X & Y & %rad3 soc
+					X & Y & %rad3 ideal
+					X & Y & %rad4 soc
+					X & Y  %rad4 ideal					
+					\\ \cline{2-19}
+					&
+					0 & 1.57 &
+					0 & 1.57 &
+					0 & 1.57 &
+					0.52 & 1.04 &
+					0.52 & 1.04 &
+					0.52 & 0.52 &
+					0.52 & 0.52 &
+					0 & 1.30 &
+					0 & 1.30
+					\\ \hline						
+				\end{tabular}
+			}
+		\end{table}
+
+	
+	\begin{table}[]
+		\centering
+		\caption{My caption}
+		\label{my-label}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\multirow{3}{*}{} & 
+			\multicolumn{2}{c|}{\multirow{2}{*}{}} & 
+			\multicolumn{4}{c|}{}  & 
+			\multicolumn{4}{c|}{}  & 
+			\multicolumn{4}{c|}{}  & 
+			\multicolumn{4}{c|}{}                         
+			\\ \cline{4-19} & 
+			 \multicolumn{2}{c|}{} &                
+			 \multicolumn{2}{c|}{} & 
+			 \multicolumn{2}{c|}{} & 
+			 \multicolumn{2}{c|}{} & 
+			 \multicolumn{2}{c|}{} & 
+			 \multicolumn{2}{c|}{} & 
+			 \multicolumn{2}{c|}{} & 
+			 \multicolumn{2}{c|}{} & 
+			 \multicolumn{2}{c|}{} 
+			 \\ \cline{2-19} 
+			&                    &                   &           &           &           &           &           &           &           &           &           &           &           &           &           &           &           &           \\ \hline
+			&                    &                   &           &           &           &           &           &           &           &           &           &           &           &           &           &           &           &           \\ \hline
+		\end{tabular}
+	\end{table}
+		
+		
+		
+		\begin{table}
+		\begin{tabular}{|c|c|c|c|c|c|} 
+			\hline
+			\multirow{2}{*}{A} & % id
+			\multicolumn{2}{c|}{User B} & %
+			\multicolumn{2}{c|}{User C} & \multirow{3}{*}{D}\\
+			\cline{2-5}
+			& \multicolumn{2}{c|}{Value} & \multicolumn{2}{c|}{Value} & \\
+			\cline{2-5}
+			& B1 & B2 & C1 & C2 & \\
+			\hline
+			& & & & & \\
+			\hline
+			& & & & & \\
+			\hline
+			% etc. ...
+		\end{tabular}
+		\end{table}
+		
+		
+		
+		\begin{table}[h]
+			\centering
+			{\renewcommand{\arraystretch}{1.5}	
+				\begin{tabular}{|c||c|c|}
+					\hline 
+                    \multicolumn{1}{|c||}{Reloj} &
+					\multicolumn{2}{c|}{Radianes} \\    
+					\hline	
+					12 & 0 & 0 \\ \hline
+					1230 & $\frac{1\pi}{12}$ & 0.2618 \\ \hline
+					1 & $\frac{2\pi}{12}$ & 0.5236 \\ \hline 
+					130 & $\frac{3\pi}{12}$ & 0.7854 \\ \hline
+					2 & $\frac{4\pi}{12}$ & 1.0472 \\ \hline
+					230 & $\frac{5\pi}{12}$ & 1.3090 \\ \hline
+					3 & $\frac{6\pi}{12}$ & 1.5708 \\ \hline
+					330 & $\frac{7\pi}{12}$ & 1.8326 \\ \hline
+					4 & $\frac{8\pi}{12}$ & 2.0944 \\ \hline
+					430 & $\frac{9\pi}{12}$ & 2.3562 \\ \hline
+					5 & $\frac{10\pi}{12}$ & 2.6180 \\ \hline
+					530 & $\frac{11\pi}{12}$ & 2.8798 \\ \hline
+					6 & $\frac{12\pi}{12}$ & 3.1416 \\ \hline
+					630 & $\frac{13\pi}{12}$ & 3.4034 \\ \hline
+					7 & $\frac{14\pi}{12}$ & 3.6652 \\ \hline
+					730 & $\frac{15\pi}{12}$ & 3.9270 \\ \hline
+					8 & $\frac{16\pi}{12}$ & 4.1889 \\ \hline
+					830 & $\frac{17\pi}{12}$ & 4.4506 \\ \hline
+					9 & $\frac{18\pi}{12}$ & 4.7124 \\ \hline
+					930 & $\frac{19\pi}{12}$ & 4.9749 \\ \hline
+					10 & $\frac{20\pi}{12}$ & 5.2360 \\ \hline
+					1030 & $\frac{21\pi}{12}$ & 5.4978 \\ \hline
+					11 & $\frac{22\pi}{12}$ & 5.7596 \\ \hline
+					1130 & $\frac{23\pi}{12}$ & 6.0214 \\ \hline
+				\end{tabular}
+			}\quad
+		\end{table}		
+		
+		
+		
+	
+		
+		
+		
+		
+\end{document}
+			
+			

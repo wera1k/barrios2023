@@ -1,0 +1,170 @@
+\documentclass{article}
+\begin{document} 
+	
+\section{Sample Document and Key Concepts}
+
+This is a short document to illustrate tha basic use of Latex.
+Simply leave a blank line to get a new paragraph; indentation is automatic.
+
+Mathematical expressions such as $y = 3 \ sin x$ are obtained with dollar signs.
+
+Equations can be displayed, as in
+\[
+	y = 3 \sin x
+\]
+Numbered equations are also possible:
+\begin{equation}\label{equa}
+	y = 3 \sin x
+\end{equation}	
+Because we have labeled this equation we can refer to it without having to know its number. thus, the preceding equation was
+number~(\ref{equa}).
+
+Powers (superscripts), as in $x^2$, are obtained with \verb"^"; more complicated power must live in curly braces: $x^{2+\alpha}$
+
+Likewise, subscripts are obtained woht the underscore: $y_3$ or $y_{n+1}$.
+
+We can get both with $x_{n+1}^{2+\alpha}$.
+
+The special characters \&, \$, \%, \_, \{, \}, and \# may be printed by preceding each with a backslash. We can then put text in \{curly braces\}.
+
+It is likely that 50\% of the time you will be frustrated because you forgot to precede the \% symbol by a backslash.
+% sin el slash sirve para comentar. Si lo pongo sin el slash, lo que escriba después no aparecerá en el texto ya que se toma como comentario
+
+\section{Type Style}
+
+\textup{Upright type}
+\ \\ % esto es un enter
+\textit{Italic type}
+\ \\
+\textsl{Slanted type}
+\ \\
+\textsc{Small caps type}
+\ \\ 
+\textmd{Medium} \textbf{Boldface}
+\ \\
+\textrm{Roman} \textsf{Sans serif} \texttt{Typewriter}
+\ \\
+\textsl{Don't \textbf{overuse} type-changing.}
+\textsf{It \textit{annoys} the \textsc{reader}.}
+\texttt{And loses \textsl{impact}.}
+\ \\
+\textsc{Pile on \emph{lots} of subtlety.}
+\textsf{Sans serif adds a little  \emph{je ne sais rein}.}
+\textsl{Nouns should \emph{never} be verbed.}
+\ \\ \ \\
+{\LARGE LARGE text} makes ideal
+{\Large Large text} for
+a shortsighted people;
+{\tiny tiny text} makes
+ideal {\scriptsize scriptsize text} for longsighted people.
+
+\section{Enviroments}
+
+\begin{itemize}
+	\item Every sentence should make sense in isolation. 
+	Like that one.
+	\item There is a lot to be said for brevity.
+	\item Many words can ostensibly be deleted.
+	\item Eschew the highfalutin.
+	\item Understatement is a mindblowingly effective weapon.
+\end{itemize}	
+\ \\	
+	
+\begin{enumerate}
+	\item Spellcheckers are not perfect; they can kiss may errs.
+	\item Somebody once said that all quotes should neaccurately attributed.
+	\item The importance of comprehensive cross-referencing will be covered elsewhere.
+\end{enumerate}	
+\ \\
+
+\begin{description}
+		\item[Rule 1.] Mixed metaphors can kill two birds without a paddle.
+		\item[Rule 2.] Similes are about as much use as a chocolate teapot.	 
+\end{description}
+\ \\
+
+%Listas anidadas
+\begin{enumerate}
+	\item Punctuation
+	\begin{enumerate}
+		\item Don't use commas, to separate text unnecessarily.
+		\item Avoid ugly abrv's'ns.
+	\end{enumerate}
+	\item Spelling
+	\begin{enumerate}
+		\item If there's a particular word ya can never spell, use a pnemonic.
+		\item Take care with pluri.
+	\end{enumerate}	
+\end{enumerate}
+\ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\ \ \\
+
+\begin{center}
+	{\large\textbf{Assigment 1}}\\
+	Sue d'Onym\\
+	MS601
+\end{center}	
+\ \\
+
+The marks for the 1996 class are more respectable. \ \\
+\begin{tabular}{lrc}
+	Name & Mark & Grade \\
+	\hline
+	Emma Winner & 99 & A+ \\
+	Scott Passmark & 51 & C \\
+	Shirley Knott & 5 & F 
+\end{tabular} 
+\ \\	
+The avarage mark is well over 50\%
+\ \\
+
+\begin{center}
+	\begin{tabular}{|l||r|c|}
+		\hline
+		Name & Mark & Grade \\
+		\hline \hline
+		Emma Winner & 99 & A+ \\
+		Scott Passmark & 51 & C \\
+		Shirley Knott & 5 & F \\
+		\hline
+	\end{tabular}
+\end{center}
+\ \\
+
+\begin{tabular}{|l||r|r|}
+	\hline
+	& \multicolumn{2}{c|}{Marks}\\
+		\cline{2-3}
+	Name & MS601 & MS602 \\
+	\hline \hline
+		Emma Winner & 99 & 51 \\
+		Scott Passmark & 51 & 50 \\
+		Shirley Knott & 5 & 49 \\
+		\hline	
+\end{tabular}	
+\ \\ \ \\
+
+
+
+
+The results given in Table~\ref{tab:a} show the very satisfactory performance off the 1996 class, whose avarage is over 50\% (Note that we have referred to the number of the table before it appears.)
+\begin{table}
+	\begin{center}
+		\begin{tabular}{lrc}\hline
+			Name & Mark & Grade \\
+			\hline
+			Emma Winner & 99 & A+ \\
+			Scott Passmark & 51 & C \\
+			Shirley Knott & 5 & F \\
+	\end{tabular}	
+	\caption{Class Mark List}\label{tab:a}
+	\end{center}
+\end{table}
+
+abc fbgfbgfbgf \cite{Stigler-2005} jhgjhgjhgjhgjyg
+
+
+	\nocite{*}
+	\bibliography{../Referencias/REFERENCIASejemplo}
+	\bibliographystyle{plain}	
+
+\end{document}

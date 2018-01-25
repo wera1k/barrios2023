@@ -1,0 +1,183 @@
+\documentclass[11pt]{book}
+\usepackage[paperwidth=17cm, paperheight=22.5cm, bottom=2.5cm, right=2.5cm]{geometry}
+\usepackage{amssymb,amsmath,amsthm} %paquete para símbolo matemáticos
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc} %Paquete para escribir acentos y otros símbolos directamente
+\usepackage{enumerate}
+\usepackage{graphicx}
+\graphicspath{{Img/}} %En qué carpeta están las imágenes
+\usepackage[nottoc]{tocbibind}
+\usepackage[pdftex,
+pdfauthor={NOMBRE DEL AUTOR},
+pdftitle={TÍTULO DE LA TESIS},
+pdfsubject={ÁREA DE LA TESIS},
+pdfkeywords={PALABRAS CLAVE},
+pdfproducer={Latex con hyperref},
+pdfcreator={pdflatex}]{hyperref}
+
+%https://www.overleaf.com/10144411rxstpwjdjhhk#/37451959/
+
+
+
+
+\begin{document}
+	
+
+% Portada --------------------------------------------------------------------------------	
+
+%	\title{TÍTULO DE LA TESIS} %Con este nombre se guardará el proyecto en writeLaTex
+	
+	\begin{titlepage}
+		\begin{center}
+			
+			\textsc{\Large Instituto Tecnológico Autónomo de México}\\[4em]
+			
+			%Figura
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[scale=1]{itam}
+				\end{center}
+			\end{figure}
+			
+			\vspace{4em}
+			
+			\textsc{\huge \textbf{TÍTULO MAMÓN}}\\[4em]
+			
+			\textsc{\large TESIS}\\[1em]
+			
+			\textsc{que para obtener el título de}\\[1em]
+			
+			\textsc{LICENCIADA EN ACTUARÍA}\\[1em]
+			
+			\textsc{presenta}\\[1em]
+			
+			\textsc{\Large NORMA ADRIANA TAPIA MUÑOZ}\\[1em]
+			
+			\textsc{\large Asesor: ERNESTO JUVENAL BARRIOS ZAMUNDIO}
+			
+		\end{center}
+		
+		\vspace*{\fill}
+		\textsc{México, D.F. \hspace*{\fill} 2017}
+		
+	\end{titlepage}
+	
+%------------------------------------------------------------------------------------------	
+
+% Declaración -----------------------------------------------------------------------------
+
+\thispagestyle{empty}
+\vspace*{\fill}
+\begingroup
+``Con fundamento en los artículos 21 y 27 de la Ley Federal del Derecho de Autor y como titular de los derechos moral y patrimonial de la obra titulada ``\textbf{TÍTULO MAMÓN}'', otorgo de manera gratuita y permanente al Instituto Tecnológico Autónomo de México y a la Biblioteca Raúl Bailléres Jr., la autorización para que fijen la obra en cualquier medio, incluido el electrónico, y la divulguen entre sus usuarios, profesores, estudiantes o terceras personas, sin que pueda percibir por tal divulgación una contraprestación''.
+
+\centering
+
+\hspace{3em}
+
+\textsc{NORMA ADRIANA TAPIA MUÑOZ}
+
+\vspace{5em}
+
+\rule[1em]{20em}{0.5pt} % Línea para la fecha
+
+\textsc{Fecha}
+
+\vspace{8em}
+
+\rule[1em]{20em}{0.5pt} % Línea para la firma
+
+\textsc{Firma}
+
+\endgroup
+\vspace*{\fill}
+
+%-------------------------------------------------------------------------------------------
+
+% Dedicatoria -> OPCIONAL ------------------------------------------------------------------
+
+\pagestyle{empty}
+\frontmatter
+
+\chapter*{}
+\begin{flushright}
+	\textit{algo}
+\end{flushright}
+
+%-------------------------------------------------------------------------------------------
+
+% Agradecimientos --------------------------------------------------------------------------
+
+\chapter*{Agradecimientos}
+%\markboth{AGRADECIMIENTOS23}{AGRADECIMIENTOS} % encabezado 
+
+Gracias! XOXO
+
+%-------------------------------------------------------------------------------------------
+
+% Contenido o Índice -----------------------------------------------------------------------
+
+\tableofcontents
+
+%-------------------------------------------------------------------------------------------
+
+% Tesis ------------------------------------------------------------------------------------
+
+\mainmatter %empieza la numeración de las páginas
+\pagestyle{headings}
+
+%  Incluye los capítulos en el folder de capítulos
+
+
+\chapter{Introducción}  
+Descripción general del tema y de cómo se tratará todo. Hacer al final
+
+\thispagestyle{empty}
+\chapter{Análisis descriptivo} 
+
+	Poner de qué se trata, los datos de medicina, las imágenes de medicina, y contexto
+	
+	
+\include{Capitulos/cap1}
+\thispagestyle{empty}
+\include{Capitulos/Conclusiones}
+\thispagestyle{empty}
+
+
+
+%-------------------------------------------------------------------------------------------
+
+% Apéndices --------------------------------------------------------------------------------
+
+
+\addtocontents{toc}{\vspace{2em}} % Agrega espacios en la toc
+
+\appendix % Los siguientes capítulos son apéndices
+
+%  Incluye los apéndices en el folder de apéndices
+
+\include{Apendices/Ap}
+\thispagestyle{empty}
+%\include{Apendices/AppendixB}
+%\include{Apendices/AppendixC}
+
+\addtocontents{toc}{\vspace{2em}} % Agrega espacio en la toc
+
+
+
+%-------------------------------------------------------------------------------------------
+
+% Bibliografía -----------------------------------------------------------------------------
+
+\backmatter
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibliografía.bib} %Aquí ponen el nombre del archivo .bib
+
+
+
+
+
+
+	
+\end{document}

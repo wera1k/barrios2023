@@ -1,0 +1,11 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: tesisformato.aux
+A level-1 auxiliary file: Capitulos/cap1.aux
+A level-1 auxiliary file: Capitulos/Conclusiones.aux
+A level-1 auxiliary file: Apendices/Ap.aux
+The style file: plain.bst
+White space in argument---line 40 of file tesisformato.aux
+ : \bibdata{bibliograf\unhbox
+ :                            \voidb@x \bgroup \let \unhbox \voidb@x \setbox \@tempboxa \hbox {\OT1\i \global \mathchardef \accent@spacefactor \spacefactor }\accent 19 \OT1\i \egroup \spacefactor \accent@spacefactor \futurelet \@let@token \penalty \@M \hskip \z@skip a.bib}
+I'm skipping whatever remains of this command
+I found no database files---while reading file tesisformato.aux
+(There were 2 error messages)
