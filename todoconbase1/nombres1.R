@@ -1,0 +1,10 @@
+#getwd()
+#setwd("~/Tesis/R")
+#base<-read.csv("C:/Users/Norma Tapia/Documents/Tesis/R/base1.csv", header=FALSE, na.strings="#N/A")
+names(base1)[1:5] <- c("paciente","tiempoEspera","edad","genero","lado")
+names(base1)[6:8] <- c("relojCir","posCir","extCir")
+names(base1)[9:14] <- c("relojIdealMed1","posIdealMed1","extIdealMed1","relojSOCMed1","posSOCMed1","extSOCMed1")
+names(base1)[15:20] <- c("relojIdealMed2","posIdealMed2","extIdealMed2","relojSOCMed2","posSOCMed2","extSOCMed2")
+names(base1)[21:26] <- c("relojIdealMed3","posIdealMed3","extIdealMed3","relojSOCMed3","posSOCMed3","extSOCMed3")
+names(base1)[27:32] <- c("relojIdealMed4","posIdealMed4","extIdealMed4","relojSOCMed4","posSOCMed4","extSOCMed4")
+
